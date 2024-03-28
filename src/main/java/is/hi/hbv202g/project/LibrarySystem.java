@@ -1,4 +1,4 @@
-package is.hi.hbv202g.assignment8;
+package is.hi.hbv202g.project;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -60,7 +60,13 @@ public class LibrarySystem {
     this.lendings.add(new Lending(book, user));
   }
 
-  public void extendLending(FacultyMember facultyMember, Book book, LocalDate newDueDate){
+  public void extendLending(FacultyMember facultyMember, Book book, LocalDate newDueDate) throws UserOrBookDoesNotExistException{
+    if (!this.books.contains(book)) {
+      throw new UserOrBookDoesNotExistException("Book does not exist in the system");
+    }
+    if (!this.users.contains(facultyMember)) {
+      throw new UserOrBookDoesNotExistException("User does not exist in the system");
+    }
     for (Lending lending : this.lendings) {
       if (lending.getBook().equals(book) && lending.getUser().equals(facultyMember)) {
         lending.setDueDate(newDueDate);
@@ -86,7 +92,6 @@ public class LibrarySystem {
     throw new UserOrBookDoesNotExistException("User has not borrowed book");
   }
 
-
   public List<Book> getAllBooks() {
     return new ArrayList<>(books); // Return a copy of the list to prevent modification of the original list
   }
@@ -95,7 +100,7 @@ public class LibrarySystem {
     return new ArrayList<>(users); // Return a copy of the list to prevent modification of the original list
   }
 
-  public List<Lending> getAllLendingdForUser(User user) {
+  public List<Lending> getAllLendingsForUser(User user) {
     List<Lending> lendings = new ArrayList<Lending>();
     for (Lending lending : this.lendings) {
       if (lending.getUser().equals(user)) {

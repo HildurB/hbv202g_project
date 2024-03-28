@@ -1,4 +1,4 @@
-package is.hi.hbv202g.assignment8;
+package is.hi.hbv202g.project;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -286,8 +286,13 @@ public class Main {
                 return;
             }
             Book selectedExtendedLending = librarySystem.getAllBooks().get(extendLendingIndex - 1);
-            librarySystem.extendLending((FacultyMember) userLoggedIn, selectedExtendedLending,
-                    java.time.LocalDate.now().plusDays(30));
+            try {
+                librarySystem.extendLending((FacultyMember) userLoggedIn, selectedExtendedLending,
+                        java.time.LocalDate.now().plusDays(30));
+            } catch (UserOrBookDoesNotExistException e) {
+                System.out.println("Could not extend lending: " + e.getMessage());
+                return;
+            }
             System.out.println("Book returned successfully!");
         } else {
             System.out.println("Only faculty members can extend lending");
@@ -336,7 +341,7 @@ public class Main {
      * @param userLoggedIn The user who is logged in.
      */
     private static void listLendings(LibrarySystem librarySystem, User userLoggedIn) {
-        List<Lending> lendings = librarySystem.getAllLendingdForUser(userLoggedIn);
+        List<Lending> lendings = librarySystem.getAllLendingsForUser(userLoggedIn);
         System.out.println("Books that you have lended:");
         for (int i = 0; i < lendings.size(); i++) {
             Lending lending = lendings.get(i);

@@ -1,9 +1,9 @@
-package is.hi.hbv202g.assignment8;
+package is.hi.hbv202g.project;
 
-public abstract class User {
+public class Author {
   private String name;
 
-  User(String name) {
+  public Author(String name) {
     this.name = name;
   }
 

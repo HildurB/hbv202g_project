@@ -1,4 +1,4 @@
-package is.hi.hbv202g.assignment8;
+package is.hi.hbv202g.project;
 
 public class Student extends User {
   private boolean feePaid;
