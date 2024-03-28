@@ -1,5 +1,6 @@
-public class FacultyMember extends User{
-  
+package is.hi.hbv202g.assignment8;
+
+public class FacultyMember extends User {
   private String department;
 
   public FacultyMember(String name, String department) {
@@ -8,7 +9,7 @@ public class FacultyMember extends User{
   }
 
   public String getDepartment() {
-    return department;
+    return this.department;
   }
 
   public void setDepartment(String department) {

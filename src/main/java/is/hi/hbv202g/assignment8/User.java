@@ -1,13 +1,14 @@
+package is.hi.hbv202g.assignment8;
+
 public abstract class User {
-  
   private String name;
 
-  public User(String name) {
+  User(String name) {
     this.name = name;
   }
 
   public String getName() {
-    return name;
+    return this.name;
   }
 
   public void setName(String name) {
