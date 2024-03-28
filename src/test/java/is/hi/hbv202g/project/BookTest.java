@@ -5,10 +5,6 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
-import is.hi.hbv202g.project.Author;
-import is.hi.hbv202g.project.Book;
-import is.hi.hbv202g.project.EmptyAuthorListException;
-
 import java.util.ArrayList;
 import java.util.List;
 

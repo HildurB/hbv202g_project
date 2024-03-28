@@ -7,14 +7,6 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
-import is.hi.hbv202g.project.Author;
-import is.hi.hbv202g.project.Book;
-import is.hi.hbv202g.project.EmptyAuthorListException;
-import is.hi.hbv202g.project.FacultyMember;
-import is.hi.hbv202g.project.LibrarySystem;
-import is.hi.hbv202g.project.User;
-import is.hi.hbv202g.project.UserOrBookDoesNotExistException;
-
 public class LibrarySystemTest {
 
     private LibrarySystem librarySystem;

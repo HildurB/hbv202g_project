@@ -6,11 +6,6 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
-import is.hi.hbv202g.project.Book;
-import is.hi.hbv202g.project.FacultyMember;
-import is.hi.hbv202g.project.Lending;
-import is.hi.hbv202g.project.User;
-
 public class LendingTest {
     private Lending lending;
     private Book book;
