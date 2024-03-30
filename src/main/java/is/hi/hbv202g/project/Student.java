@@ -33,7 +33,7 @@ public class Student extends User {
   /**
    * Setter for feePaid status of the student
    * 
-   * @param feePaid - Fee paid status of the student
+   * @param feePaid Fee paid status of the student
    */
   public void setFeePaid(boolean feePaid) {
     this.feePaid = feePaid;

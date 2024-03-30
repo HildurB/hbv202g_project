@@ -35,7 +35,7 @@ public class FacultyMember extends User {
   /**
    * Setter for department of the faculty member
    *
-   * @param department - Department of the faculty member
+   * @param department Department of the faculty member
    */
   public void setDepartment(String department) {
     this.department = department;

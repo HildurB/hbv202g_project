@@ -53,7 +53,7 @@ public class Book {
   /**
    * Setter for authors of the book
    *
-   * @param authors - A list of authors
+   * @param authors A list of authors
    * @throws EmptyAuthorListException
    */
   public void setAuthors(List<Author> authors) throws EmptyAuthorListException {
@@ -66,7 +66,7 @@ public class Book {
   /**
    * Add a single author to the book
    *
-   * @param author - The author to add
+   * @param author The author to add
    *
    * @see Author for more info on the author class
    */

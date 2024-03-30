@@ -32,7 +32,7 @@ public abstract class User {
   /**
    * Setter for name of the user
    * 
-   * @param name - Name of the user
+   * @param name Name of the user
    */
   public void setName(String name) {
     this.name = name;

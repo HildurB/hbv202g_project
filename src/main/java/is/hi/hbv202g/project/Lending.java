@@ -41,7 +41,7 @@ public class Lending {
   /**
    * Setter for due date of the lending
    *
-   * @param dueDate - Due date of the lending
+   * @param dueDate Due date of the lending
    */
   public void setDueDate(LocalDate dueDate) {
     this.dueDate = dueDate;
@@ -59,7 +59,7 @@ public class Lending {
   /**
    * Setter for book of the lending
    *
-   * @param book - Book of the lending
+   * @param book Book of the lending
    */
   public void setBook(Book book) {
     this.book = book;
@@ -77,7 +77,7 @@ public class Lending {
   /**
    * Setter for user of the lending
    *
-   * @param user - User of the lending
+   * @param user User of the lending
    */
   public void setUser(User user) {
     this.user = user;
