@@ -6,9 +6,10 @@
 
     <groupId>is.hi.hbv202g.project</groupId>
     <artifactId>project</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0</version>
 
-    <name>HBV202G project</name>
+    <name>HBV202G final project</name>
+    <description>Library system with a textual user interface</description>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -28,6 +29,20 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
+
+
+    <licenses>
+      <license>
+        <name>MIT</name>
+        <url>./LICENSE</url>
+      </license>
+    </licenses>
+
+
+    <organization>
+      <name>University of Iceland</name>
+      <url>https://www.hi.is</url>
+    </organization>
 
     <build>
         <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
