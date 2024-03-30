@@ -30,11 +30,19 @@ public class Main {
 
     while (true) {
       displayMenu();
-      int choice = scanner.nextInt();
-      scanner.nextLine();
-      System.out.println("");
+      String choice = scanner.nextLine();
+      int choiceInt = 0;
 
-      switch (choice) {
+      try {
+        choiceInt = Integer.parseInt(choice);
+      } catch (NumberFormatException e) {
+        System.out.println("Invalid choice. Please enter a number between 1 and 9.");
+        continue;
+      }
+
+      System.out.println();
+
+      switch (choiceInt) {
         case 1:
           addBook(scanner, myLibrarySystem);
           break;
@@ -69,6 +77,7 @@ public class Main {
       }
       System.out.println("---------------------------------");
     }
+
   }
 
   /**
@@ -146,8 +155,16 @@ public class Main {
     System.out.print("Enter user name: ");
     String userName = scanner.nextLine();
     System.out.print("Are you a faculty member? (true/false): ");
-    boolean isFacultyMember = scanner.nextBoolean();
-    scanner.nextLine(); // Consume newline
+
+    String isFaucultyString = scanner.nextLine();
+    boolean isFacultyMember = false;
+
+    try {
+      isFacultyMember = Boolean.parseBoolean(isFaucultyString);
+    } catch (NumberFormatException e) {
+      System.out.println("Invalid input. Assuming you are not a faculty member.");
+    }
+
     if (isFacultyMember) {
       System.out.print("Enter department: ");
       String department = scanner.nextLine();
