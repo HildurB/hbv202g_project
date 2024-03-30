@@ -194,8 +194,9 @@ public class LibrarySystem {
   }
 
   /**
-   * Getter for all lendings in the library system
-   * 
+   * Getter for all books lended by the user
+   *
+   * @param user User to get lendings for
    * @return List of lendings
    */
   public List<Lending> getAllLendingsForUser(User user) {

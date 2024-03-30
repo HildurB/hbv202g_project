@@ -28,10 +28,7 @@ public class Book {
    * 
    * @param title   Title of the book
    * @param authors List of authors
-   * @throws EmptyAuthorListException
-   *
-   * @see Author for more info on the author class
-   * @see EmptyAuthorListException for more info on the exception
+   * @throws EmptyAuthorListException Thrown when the list of authors is empty
    */
   public Book(String title, List<Author> authors) throws EmptyAuthorListException {
     this.title = title;
@@ -54,7 +51,7 @@ public class Book {
    * Setter for authors of the book
    *
    * @param authors A list of authors
-   * @throws EmptyAuthorListException
+   * @throws EmptyAuthorListException Thrown when the list of authors is empty
    */
   public void setAuthors(List<Author> authors) throws EmptyAuthorListException {
     if (authors.isEmpty()) {
@@ -67,8 +64,6 @@ public class Book {
    * Add a single author to the book
    *
    * @param author The author to add
-   *
-   * @see Author for more info on the author class
    */
   public void addAuthor(Author author) {
     this.authors.add(author);
