@@ -1,15 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<diagram program="umlet" version="15.1">
-  <zoom_level>16</zoom_level>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>752</x>
-      <y>16</y>
-      <w>1056</w>
-      <h>320</h>
-    </coordinates>
-    <panel_attributes>LibrarySystem
+<diagram program="umletino" version="15.1"><zoom_level>17</zoom_level><element><id>UMLClass</id><coordinates><x>663</x><y>34</y><w>1122</w><h>391</h></coordinates><panel_attributes>LibrarySystem
 --
 --
 +LibrarySystem(): ctor
@@ -21,18 +10,10 @@
 +findUserByName(String name): User
 +borrowBook(User user, Book book): void
 +extendLending(FacultyMember facultyMember, Book book, LocalDate newDueDate): void
-+returnBook(User user, Book book): void</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>848</x>
-      <y>576</y>
-      <w>480</w>
-      <h>288</h>
-    </coordinates>
-    <panel_attributes>Lending
++returnBook(User user, Book book): void
++getAllBooks(): List&lt;Book&gt;
++getAllUsers(): List&lt;User&gt;
++getAllLendingsForUser(User user): List&lt;Lending&gt;</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>765</x><y>629</y><w>510</w><h>306</h></coordinates><panel_attributes>Lending
 --
 -dueDate: java.time.LocalDate
 --
@@ -43,18 +24,7 @@
 +setBook(Book book): void
 +getUser(): User
 +setUser(User user): void
-</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>160</x>
-      <y>624</y>
-      <w>576</w>
-      <h>256</h>
-    </coordinates>
-    <panel_attributes>Book
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>34</x><y>680</y><w>612</w><h>272</h></coordinates><panel_attributes>Book
 --
 -title: String
 --
@@ -66,18 +36,7 @@
 +getTitle(): String
 +setTitle(String title): void
 
-</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>176</x>
-      <y>1008</y>
-      <w>368</w>
-      <h>176</h>
-    </coordinates>
-    <panel_attributes>Author
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>51</x><y>1088</y><w>391</w><h>187</h></coordinates><panel_attributes>Author
 --
 -name: String
 --
@@ -85,35 +44,13 @@
 +getName(): String
 +setName(String name): void
 
-</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>592</x>
-      <y>1008</y>
-      <w>544</w>
-      <h>176</h>
-    </coordinates>
-    <panel_attributes>Student
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>493</x><y>1088</y><w>578</w><h>187</h></coordinates><panel_attributes>Student
 --
 -feePaid: boolean
 --
 +Student(String name, boolean feePaid): ctor
 +isFeePaid(): boolean
-+setFeePaid(boolean feePaid): void</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>1440</x>
-      <y>640</y>
-      <w>368</w>
-      <h>192</h>
-    </coordinates>
-    <panel_attributes>/User {abstract}/
++setFeePaid(boolean feePaid): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1394</x><y>697</y><w>391</w><h>204</h></coordinates><panel_attributes>/User {abstract}/
 --
 -name: String
 --
@@ -121,332 +58,43 @@
 +getName(): String
 +setName(String name): void
 
-</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>1152</x>
-      <y>1008</y>
-      <w>656</w>
-      <h>176</h>
-    </coordinates>
-    <panel_attributes>FacultyMember
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1088</x><y>1088</y><w>697</w><h>187</h></coordinates><panel_attributes>FacultyMember
 --
 -department: String
 --
 +FacultyMember(String name, String department): ctor
 +getDepartment(): String
 +setDepartment(String department): void
-</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>240</x>
-      <y>160</y>
-      <w>496</w>
-      <h>112</h>
-    </coordinates>
-    <panel_attributes>UserOrBookDoesNotExistException
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>119</x><y>187</y><w>527</w><h>119</h></coordinates><panel_attributes>UserOrBookDoesNotExistException
 --
 --
 +UserOrBookDoesNotExistException
                               (String message): ctor
-</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>1664</x>
-      <y>816</y>
-      <w>48</w>
-      <h>224</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;120.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>848</x>
-      <y>816</y>
-      <w>720</w>
-      <h>224</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>430.0;10.0;430.0;70.0;10.0;70.0;10.0;120.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>368</x>
-      <y>864</y>
-      <w>128</w>
-      <h>176</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;-
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1632</x><y>884</y><w>51</w><h>238</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;120</additional_attributes></element><element><id>Relation</id><coordinates><x>765</x><y>884</y><w>765</w><h>238</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>430;10;430;70;10;70;10;120</additional_attributes></element><element><id>Relation</id><coordinates><x>255</x><y>935</y><w>119</w><h>187</h></coordinates><panel_attributes>lt=&lt;-
 m1=1..n
-authors</panel_attributes>
-    <additional_attributes>10.0;90.0;10.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>528</x>
-      <y>320</y>
-      <w>448</w>
-      <h>336</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
-m2=0..n</panel_attributes>
-    <additional_attributes>260.0;10.0;260.0;140.0;10.0;140.0;10.0;190.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>720</x>
-      <y>688</y>
-      <w>160</w>
-      <h>80</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;-
+authors</panel_attributes><additional_attributes>10;90;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>425</x><y>408</y><w>476</w><h>306</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m2=0..n</panel_attributes><additional_attributes>260;10;260;110;10;110;10;160</additional_attributes></element><element><id>Relation</id><coordinates><x>629</x><y>748</y><w>170</w><h>85</h></coordinates><panel_attributes>lt=&lt;-
 m1=1
-book</panel_attributes>
-    <additional_attributes>10.0;20.0;80.0;20.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>1312</x>
-      <y>640</y>
-      <w>160</w>
-      <h>80</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;-
+book</panel_attributes><additional_attributes>10;20;80;20</additional_attributes></element><element><id>Relation</id><coordinates><x>1258</x><y>697</y><w>170</w><h>85</h></coordinates><panel_attributes>lt=&lt;-
 m1=1
-user</panel_attributes>
-    <additional_attributes>80.0;20.0;10.0;20.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>1072</x>
-      <y>320</y>
-      <w>96</w>
-      <h>288</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
-m2=0..n</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;160.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>1600</x>
-      <y>320</y>
-      <w>96</w>
-      <h>352</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
-m2=0..n</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;200.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>576</x>
-      <y>80</y>
-      <w>208</w>
-      <h>112</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;.
-&lt;&lt;throws&gt;&gt;</panel_attributes>
-    <additional_attributes>10.0;50.0;10.0;20.0;110.0;20.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>512</x>
-      <y>272</y>
-      <w>272</w>
-      <h>128</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;.
-&lt;&lt;throws&gt;&gt;</panel_attributes>
-    <additional_attributes>10.0;60.0;10.0;20.0;150.0;20.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>400</x>
-      <y>464</y>
-      <w>144</w>
-      <h>192</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;.
-&lt;&lt;throws&gt;&gt;</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;100.0</additional_attributes>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>160</x>
-      <y>368</y>
-      <w>592</w>
-      <h>112</h>
-    </coordinates>
-    <panel_attributes>EmptyAuthorListException
+user</panel_attributes><additional_attributes>80;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>1003</x><y>408</y><w>85</w><h>255</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m2=0..n</panel_attributes><additional_attributes>10;10;10;130</additional_attributes></element><element><id>Relation</id><coordinates><x>1564</x><y>408</y><w>85</w><h>323</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m2=0..n</panel_attributes><additional_attributes>10;10;10;170</additional_attributes></element><element><id>Relation</id><coordinates><x>476</x><y>102</y><w>221</w><h>119</h></coordinates><panel_attributes>lt=&lt;.
+&lt;&lt;throws&gt;&gt;</panel_attributes><additional_attributes>10;50;10;20;110;20</additional_attributes></element><element><id>Relation</id><coordinates><x>374</x><y>306</y><w>323</w><h>136</h></coordinates><panel_attributes>lt=&lt;.
+&lt;&lt;throws&gt;&gt;</panel_attributes><additional_attributes>10;60;10;20;170;20</additional_attributes></element><element><id>Relation</id><coordinates><x>255</x><y>510</y><w>136</w><h>204</h></coordinates><panel_attributes>lt=&lt;.
+&lt;&lt;throws&gt;&gt;</panel_attributes><additional_attributes>10;10;10;100</additional_attributes></element><element><id>UMLClass</id><coordinates><x>0</x><y>408</y><w>629</w><h>119</h></coordinates><panel_attributes>EmptyAuthorListException
 --
 --
 +EmptyAuthorListException(String message): ctor
 
-</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>160</x>
-      <y>16</y>
-      <w>336</w>
-      <h>48</h>
-    </coordinates>
-    <panel_attributes>java.lang.Exception</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>336</x>
-      <y>48</y>
-      <w>48</w>
-      <h>144</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>192</x>
-      <y>48</y>
-      <w>48</w>
-      <h>352</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;200.0</additional_attributes>
-  </element>
-  <element>
-    <id>Text</id>
-    <coordinates>
-      <x>464</x>
-      <y>576</y>
-      <w>112</w>
-      <h>48</h>
-    </coordinates>
-    <panel_attributes>books
-style=wordwrap</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>Text</id>
-    <coordinates>
-      <x>976</x>
-      <y>528</y>
-      <w>144</w>
-      <h>48</h>
-    </coordinates>
-    <panel_attributes>lendings
-style=wordwrap</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>Text</id>
-    <coordinates>
-      <x>1536</x>
-      <y>592</y>
-      <w>112</w>
-      <h>48</h>
-    </coordinates>
-    <panel_attributes>users
-style=wordwrap</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLNote</id>
-    <coordinates>
-      <x>1280</x>
-      <y>368</y>
-      <w>256</w>
-      <h>64</h>
-    </coordinates>
-    <panel_attributes>java.time.LocalDate
-</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>1376</x>
-      <y>272</y>
-      <w>128</w>
-      <h>128</h>
-    </coordinates>
-    <panel_attributes>lt=.
-</panel_attributes>
-    <additional_attributes>60.0;10.0;10.0;60.0</additional_attributes>
-  </element>
-  <element>
-    <id>UMLNote</id>
-    <coordinates>
-      <x>1248</x>
-      <y>496</y>
-      <w>304</w>
-      <h>64</h>
-    </coordinates>
-    <panel_attributes>Constructor sets a due 
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>34</x><y>34</y><w>357</w><h>51</h></coordinates><panel_attributes>java.lang.Exception</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>221</x><y>68</y><w>51</w><h>153</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;70</additional_attributes></element><element><id>Relation</id><coordinates><x>68</x><y>68</y><w>51</w><h>374</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;200</additional_attributes></element><element><id>Text</id><coordinates><x>357</x><y>629</y><w>119</w><h>51</h></coordinates><panel_attributes>books
+style=wordwrap</panel_attributes><additional_attributes></additional_attributes></element><element><id>Text</id><coordinates><x>901</x><y>578</y><w>153</w><h>51</h></coordinates><panel_attributes>lendings
+style=wordwrap</panel_attributes><additional_attributes></additional_attributes></element><element><id>Text</id><coordinates><x>1496</x><y>646</y><w>119</w><h>51</h></coordinates><panel_attributes>users
+style=wordwrap</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLNote</id><coordinates><x>1224</x><y>459</y><w>272</w><h>68</h></coordinates><panel_attributes>java.time.LocalDate
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1326</x><y>306</y><w>119</w><h>187</h></coordinates><panel_attributes>lt=.
+</panel_attributes><additional_attributes>50;10;10;90</additional_attributes></element><element><id>UMLNote</id><coordinates><x>1190</x><y>544</y><w>323</w><h>68</h></coordinates><panel_attributes>Constructor sets a due 
 date 30 days from now.
-</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>1248</x>
-      <y>544</y>
-      <w>64</w>
-      <h>144</h>
-    </coordinates>
-    <panel_attributes>lt=.
-</panel_attributes>
-    <additional_attributes>20.0;10.0;10.0;70.0</additional_attributes>
-  </element>
-  <element>
-    <id>UMLNote</id>
-    <coordinates>
-      <x>528</x>
-      <y>16</y>
-      <w>208</w>
-      <h>48</h>
-    </coordinates>
-    <panel_attributes>provided by Java
-</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>480</x>
-      <y>0</y>
-      <w>80</w>
-      <h>80</h>
-    </coordinates>
-    <panel_attributes>lt=.
-</panel_attributes>
-    <additional_attributes>10.0;30.0;30.0;20.0</additional_attributes>
-  </element>
-</diagram>
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1190</x><y>595</y><w>68</w><h>153</h></coordinates><panel_attributes>lt=.
+</panel_attributes><additional_attributes>20;10;10;70</additional_attributes></element><element><id>UMLNote</id><coordinates><x>425</x><y>34</y><w>221</w><h>51</h></coordinates><panel_attributes>provided by Java
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>374</x><y>17</y><w>85</w><h>85</h></coordinates><panel_attributes>lt=.
+</panel_attributes><additional_attributes>10;30;30;20</additional_attributes></element></diagram>
