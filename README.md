@@ -32,3 +32,5 @@ Package the project using the `mvn package` command.
 
 Documentation is generated using the `mvn site` command.
 Documentation is then available in the `target/site` directory.
+
+More detailed information about the project UML can be found in the [`UML.md` file](./src/site/markdown/UML.md).
