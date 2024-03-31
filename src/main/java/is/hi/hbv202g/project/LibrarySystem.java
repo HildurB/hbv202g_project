@@ -20,15 +20,35 @@ import java.util.List;
  *      UserOrBookDoesNotExistException class
  */
 public class LibrarySystem {
+  private static LibrarySystem instance = null;
+
   private List<Lending> lendings = new ArrayList<Lending>();
   private List<Book> books = new ArrayList<Book>();
   private List<User> users = new ArrayList<User>();
 
-  /**
-   * Constructor for LibrarySystem class
-   */
-  public LibrarySystem() {
+  private LibrarySystem() {
+  }
 
+  /**
+   * Gets the instance of the library system
+   * 
+   * @return Instance of the library system
+   */
+  public static LibrarySystem getInstance() {
+    if (instance == null) {
+      instance = new LibrarySystem();
+    }
+    return instance;
+  }
+
+  /**
+   * Resets the library singleton instance, used for testing purposes not to be
+   * used in production
+   *
+   * Used for testing purposes
+   */
+  public void reset() {
+    instance = new LibrarySystem();
   }
 
   /**

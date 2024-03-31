@@ -21,7 +21,11 @@ public class LibrarySystemTest {
    */
   @Before
   public void setUp() {
-    librarySystem = new LibrarySystem();
+    if (librarySystem == null) {
+      librarySystem = LibrarySystem.getInstance();
+    } else {
+      librarySystem.reset();
+    }
     addInitialData(librarySystem);
   }
 

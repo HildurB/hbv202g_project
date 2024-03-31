@@ -16,17 +16,15 @@ public class Main {
    * @param args Command line arguments.
    */
   public static void main(String[] args) {
-    LibrarySystem myLibrarySystem = new LibrarySystem();
-
     // Adding books and users to the library system
-    addInitialData(myLibrarySystem);
+    addInitialData(LibrarySystem.getInstance());
 
     Scanner scanner = new Scanner(System.in);
     User userLoggedIn = null;
     boolean isFacultyMember = false;
 
     // Logging in user
-    userLoggedIn = logInUser(scanner, myLibrarySystem);
+    userLoggedIn = logInUser(scanner, LibrarySystem.getInstance());
 
     while (true) {
       displayMenu();
@@ -44,28 +42,28 @@ public class Main {
 
       switch (choiceInt) {
         case 1:
-          addBook(scanner, myLibrarySystem);
+          addBook(scanner, LibrarySystem.getInstance());
           break;
         case 2:
-          addUser(scanner, myLibrarySystem);
+          addUser(scanner, LibrarySystem.getInstance());
           break;
         case 3:
-          borrowBook(scanner, myLibrarySystem, userLoggedIn);
+          borrowBook(scanner, LibrarySystem.getInstance(), userLoggedIn);
           break;
         case 4:
-          returnBook(scanner, myLibrarySystem, userLoggedIn);
+          returnBook(scanner, LibrarySystem.getInstance(), userLoggedIn);
           break;
         case 5:
-          extendLending(scanner, myLibrarySystem, userLoggedIn, isFacultyMember);
+          extendLending(scanner, LibrarySystem.getInstance(), userLoggedIn, isFacultyMember);
           break;
         case 6:
-          listBooks(myLibrarySystem);
+          listBooks(LibrarySystem.getInstance());
           break;
         case 7:
-          listLendings(myLibrarySystem, userLoggedIn);
+          listLendings(LibrarySystem.getInstance(), userLoggedIn);
           break;
         case 8:
-          listUsers(myLibrarySystem);
+          listUsers(LibrarySystem.getInstance());
           break;
         case 9:
           System.out.println("Exiting...");
