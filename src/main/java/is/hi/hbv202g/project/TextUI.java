@@ -22,8 +22,6 @@ public class TextUI {
   }
 
   /**
-   * TODO: needs UML
-   *
    * Interface to provide the adapter pattern for the menu actions.
    */
   interface menuAction {
@@ -51,6 +49,9 @@ public class TextUI {
       this::exit
   };
 
+  /**
+   * Menu for the text user interface.
+   */
   public void menu() {
     clearScreen();
 
@@ -99,8 +100,6 @@ public class TextUI {
   }
 
   /**
-   * TODO: needs UML
-   *
    * Helper method to log in a user.
    */
   public void login() {
@@ -147,8 +146,6 @@ public class TextUI {
   }
 
   /**
-   * TODO: needs UML
-   *
    * Helper method to add a book to the library system.
    */
   public void addBook() {
@@ -179,8 +176,6 @@ public class TextUI {
   }
 
   /**
-   * TODO: needs UML
-   *
    * Helper method to add a user to the library system.
    */
   public void addUser() {
@@ -216,8 +211,6 @@ public class TextUI {
   }
 
   /**
-   * TODO: needs UML
-   *
    * Helper method to borrow a book from the library.
    */
   public void borrowBook() {
@@ -248,8 +241,6 @@ public class TextUI {
   }
 
   /**
-   * TODO: needs UML
-   *
    * Helper method to return a book to the library system.
    */
   public void returnBook() {
@@ -282,10 +273,7 @@ public class TextUI {
   }
 
   /**
-   * TODO: needs UML
-   *
    * Helper method to extend lending of a book by a faculty member.
-   * if user is not a faculty member, cancel
    */
   public void extendLending() {
     if (!isFacultyMember) {
@@ -338,8 +326,6 @@ public class TextUI {
   }
 
   /**
-   * TODO: needs UML
-   *
    * Helper method to print out a list of given books
    *
    * @param message The message to display to the user.
@@ -358,8 +344,6 @@ public class TextUI {
   }
 
   /**
-   * TODO: needs UML
-   *
    * Helper method that overloads listBooks to list all books in the library.
    */
   private void listBooks() {
@@ -369,8 +353,6 @@ public class TextUI {
   }
 
   /**
-   * TODO: needs UML
-   *
    * Helper method to list all lendings for the user logged in.
    */
   private void listLendings() {
@@ -381,8 +363,6 @@ public class TextUI {
   }
 
   /**
-   * TODO: needs UML
-   *
    * Helper method to list all users in the library system.
    */
   private void listUsers() {
@@ -396,8 +376,6 @@ public class TextUI {
   }
 
   /**
-   * TODO: needs UML
-   *
    * Helper method to list all users in the library system that have lendings.
    */
   private List<User> listUsersWithLending() {
@@ -424,8 +402,6 @@ public class TextUI {
   }
 
   /**
-   * TODO: needs UML
-   *
    * Helper method to initialize the library system with some data.
    */
   private void addInitialData() {
