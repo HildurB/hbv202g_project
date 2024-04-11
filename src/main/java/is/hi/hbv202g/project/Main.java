@@ -1,5 +1,8 @@
 package is.hi.hbv202g.project;
 
+/**
+ * Main class to run the library system.
+ */
 public class Main {
   /**
    * Main method to run the library system.

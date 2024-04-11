@@ -6,6 +6,9 @@ import java.util.List;
 import java.util.Scanner;
 import java.util.stream.Collectors;
 
+/**
+ * TextUI class for the library system.
+ */
 public class TextUI {
   private LibrarySystem librarySystem;
   private Scanner scanner;
@@ -13,6 +16,11 @@ public class TextUI {
   private boolean isFacultyMember = false;
   private String messageString = null;
 
+  /**
+   * The main method for the text user interface.
+   *
+   * Provides a simple text user interface for the library system.
+   */
   public TextUI() {
     if (this.librarySystem == null) {
       this.librarySystem = LibrarySystem.getInstance();
@@ -25,7 +33,7 @@ public class TextUI {
    * Interface to provide the adapter pattern for the menu actions.
    */
   interface menuAction {
-    void launch();
+    public void launch();
   }
 
   private menuAction[] userActions = new menuAction[] {
@@ -148,7 +156,7 @@ public class TextUI {
   /**
    * Helper method to add a book to the library system.
    */
-  public void addBook() {
+  private void addBook() {
     clearScreen();
     String title = prompt("Enter book title, must be atleast one letter: ");
     if (title.trim().length() == 0) {
@@ -178,7 +186,7 @@ public class TextUI {
   /**
    * Helper method to add a user to the library system.
    */
-  public void addUser() {
+  private void addUser() {
     if (!isFacultyMember)
       return;
 
@@ -213,7 +221,7 @@ public class TextUI {
   /**
    * Helper method to borrow a book from the library.
    */
-  public void borrowBook() {
+  private void borrowBook() {
     clearScreen();
     List<Book> books = librarySystem.getAllBooks();
     listBooks("Available books: ", books);
@@ -243,7 +251,7 @@ public class TextUI {
   /**
    * Helper method to return a book to the library system.
    */
-  public void returnBook() {
+  private void returnBook() {
     clearScreen();
     List<Book> books = librarySystem.getAllLendingsForUser(userLoggedIn).stream().map(Lending::getBook).toList();
     listBooks("Books you have borrowed: ", books);
@@ -275,7 +283,7 @@ public class TextUI {
   /**
    * Helper method to extend lending of a book by a faculty member.
    */
-  public void extendLending() {
+  private void extendLending() {
     if (!isFacultyMember) {
       messageString = "You need to be a faculty member to extend a lending.";
       return;
@@ -458,8 +466,6 @@ public class TextUI {
   }
 
   /**
-   * TODO: needs UML
-   *
    * Helper utility method to prompt the user for input.
    *
    * @param message The message to display to the user.
@@ -471,8 +477,6 @@ public class TextUI {
   }
 
   /**
-   * TODO: needs UML
-   *
    * Helper method to exit the program.
    */
   private void exit() {
