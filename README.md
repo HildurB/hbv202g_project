@@ -22,7 +22,7 @@ Test the project using the `mvn test` command.
 
 ### Running
 
-Run the project using the `mvn exec:java"` command, alternatively you can run the shell script `run.sh`.
+Run the project using the `mvn exec:java` command, alternatively you can run the shell script `run.sh`.
 
 ### Packaging
 
